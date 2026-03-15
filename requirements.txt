@@ -1,0 +1,9 @@
+langchain-ollama
+langgraph
+streamlit
+yfinance
+pandas
+pandas_ta
+fpdf2
+pydantic
+python-dotenv
