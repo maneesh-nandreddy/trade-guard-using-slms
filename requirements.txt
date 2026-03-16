@@ -1,0 +1,6 @@
+langchain-ollama
+langgraph
+streamlit
+yfinance
+pandas_ta
+fpdf2
