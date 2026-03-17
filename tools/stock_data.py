@@ -35,3 +35,23 @@ def fetch_stock_data(symbol: str) -> dict:
         }
     except Exception as e:
         return {"error": str(e)}
+
+def fetch_stock_fundamentals(symbol: str) -> dict:
+    symbol = symbol.upper()
+    if not symbol.endswith(".NS"):
+        symbol += ".NS"
+    try:
+        stock = yf.Ticker(symbol)
+        info = stock.info
+        return {
+            "symbol": symbol,
+            "market_cap": info.get("marketCap"),
+            "pe_ratio": info.get("trailingPE"),
+            "fifty_two_week_high": info.get("fiftyTwoWeekHigh"),
+            "fifty_two_week_low": info.get("fiftyTwoWeekLow"),
+            "dividend_yield": info.get("dividendYield"),
+            "sector": info.get("sector"),
+            "summary": info.get("longBusinessSummary")
+        }
+    except Exception as e:
+        return {"error": str(e)}

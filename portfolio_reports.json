@@ -1,0 +1,65 @@
+[
+    {
+        "timestamp": "2026-03-17T18:37:50.178813",
+        "report": [
+            {
+                "symbol": "NIBE",
+                "recommendation": "HOLD",
+                "avg_price": 1008.0,
+                "qty": 12,
+                "advice": "Given your moderate risk profile and the current bearish trend of NIBE, it's prudent to hold off on any immediate buying or selling decisions. The stock appears oversold at present; however, its strong market cap and sector presence suggest this may be a temporary dip rather than an indication of fundamental issues.",
+                "averaging": {
+                    "action": "Hold",
+                    "condition": "If NIBE's price drops to below 950.0, consider buying additional shares if the market sentiment improves or it reaches a more favorable valuation."
+                },
+                "profit": {
+                    "estimate": "$24 per share",
+                    "timeframe": "1-year holding period"
+                }
+            },
+            {
+                "symbol": "TEJASNET",
+                "recommendation": "HOLD",
+                "avg_price": 381.0,
+                "qty": 10,
+                "advice": "Given your moderate risk profile and the current bearish trend in TEJASNET, it's wise to hold onto this investment for now. The stock has shown resilience post-dips with strong market fundamentals backing its position within the technology sector.",
+                "averaging": {
+                    "plan": "If TEJASNET hits an average price of \u20b9390, buy two more shares to bring your new average cost per share down to approximately \u20b9385."
+                },
+                "profit": {
+                    "estimate": "Target profit is \u20b940 if held for another month based on current fundamentals and market conditions.",
+                    "timeframe": "1 Month"
+                }
+            },
+            {
+                "symbol": "HINDCOPPER",
+                "recommendation": "HOLD",
+                "avg_price": 542.0,
+                "qty": 24,
+                "advice": "Given your moderate risk profile and the current bearish trend in HINDCOPPER's stock price, it is advisable to hold onto your shares for now. The recent recovery towards resistance levels indicates potential strength that could lead to a rebound if market conditions improve.",
+                "averaging": {
+                    "plan": "If the share price of HINDCOPPER hits \u20b9560, buy an additional 24 shares to bring your average cost per share down to approximately \u20b9550."
+                },
+                "profit": {
+                    "estimate": "Target profit is \u20b918 if held for another month assuming a recovery back towards the resistance level of \u20b9600.",
+                    "timeframe": "Another month"
+                }
+            },
+            {
+                "symbol": "SUZLON",
+                "recommendation": "HOLD",
+                "avg_price": 44.3,
+                "qty": 150,
+                "advice": "Given your moderate risk profile and the current bearish trend in SUZLON's stock price, it is prudent to hold onto your shares for now. The RSI being below midpoint suggests that we are not overbought yet; however, caution should be exercised due to potential volatility.",
+                "averaging": {
+                    "action": "Hold",
+                    "condition": "No immediate action required as the stock is already in your portfolio."
+                },
+                "profit": {
+                    "estimate": "Target profit of up to 10% if held for another quarter, considering potential market recovery.",
+                    "timeframe": "Another quarter"
+                }
+            }
+        ]
+    }
+]

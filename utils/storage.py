@@ -25,3 +25,23 @@ def load_history() -> list:
             return json.load(f)
         except json.JSONDecodeError:
             return []
+PORTFOLIO_REPORTS_FILE = "portfolio_reports.json"
+
+def save_portfolio_report(report_data: list):
+    reports = load_portfolio_reports()
+    record = {
+        "timestamp": datetime.now().isoformat(),
+        "report": report_data
+    }
+    reports.append(record)
+    with open(PORTFOLIO_REPORTS_FILE, "w") as f:
+        json.dump(reports, f, indent=4)
+
+def load_portfolio_reports() -> list:
+    if not os.path.exists(PORTFOLIO_REPORTS_FILE):
+        return []
+    with open(PORTFOLIO_REPORTS_FILE, "r") as f:
+        try:
+            return json.load(f)
+        except json.JSONDecodeError:
+            return []

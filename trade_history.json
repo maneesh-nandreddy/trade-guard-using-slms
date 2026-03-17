@@ -68,5 +68,12 @@
         "recommendation": "HOLD",
         "reasoning": "The current stock is in a bearish trend with an RSI below the mid-50 mark, indicating it's overbought. The MACD and its signal are negative which suggests selling pressure; however, considering that there has been no significant news sentiment change (neutral score), this might not be enough to trigger immediate action for retail investors who have a long-term perspective.",
         "price": 998.9
+    },
+    {
+        "timestamp": "2026-03-17T17:01:21.608961",
+        "symbol": "HINDCOPPER",
+        "recommendation": "HOLD",
+        "reasoning": "The current stock is in a bearish trend with an RSI below the midpoint, indicating overbought conditions. The MACD and its signal line are both negative which suggests that selling pressure may increase soon if not already present.",
+        "price": 493.15
     }
 ]

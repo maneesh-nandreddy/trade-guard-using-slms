@@ -1,0 +1,22 @@
+[
+    {
+        "symbol": "NIBE",
+        "quantity": 12,
+        "avg_price": 1008.0
+    },
+    {
+        "symbol": "TEJASNET",
+        "quantity": 10,
+        "avg_price": 381.0
+    },
+    {
+        "symbol": "HINDCOPPER",
+        "quantity": 24,
+        "avg_price": 542.0
+    },
+    {
+        "symbol": "SUZLON",
+        "quantity": 150,
+        "avg_price": 44.3
+    }
+]
