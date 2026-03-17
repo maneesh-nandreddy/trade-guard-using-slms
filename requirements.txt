@@ -4,3 +4,5 @@ streamlit
 yfinance
 pandas_ta
 fpdf2
+websocket-client
+requests

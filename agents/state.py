@@ -9,5 +9,8 @@ class AgentState(TypedDict, total=False):
     sentiment_reasoning: str
     recommendation: str
     reasoning: str
+    buy_target: str
+    sell_target: str
+    fluctuation_analysis: str
     personalized_advice: str
     error: str

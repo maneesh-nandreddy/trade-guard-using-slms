@@ -2,8 +2,9 @@ import pandas as pd
 import pandas_ta as ta
 
 def calculate_technical_indicators(hist_json: str) -> dict:
+    import io
     try:
-        df = pd.read_json(hist_json)
+        df = pd.read_json(io.StringIO(hist_json))
         if df.empty or len(df) < 20:
             return {"error": "Not enough data for technical analysis. Minimum 20 days required."}
             
