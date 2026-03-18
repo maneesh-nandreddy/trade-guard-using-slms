@@ -1,23 +1,25 @@
 from agents.state import AgentState
 from langchain_core.messages import HumanMessage
-from langchain_ollama import ChatOllama
 import json
 import re
 import subprocess
 import sys
-
-llm = ChatOllama(model="phi3:mini", temperature=0)
+from utils.llm_factory import get_llm
 
 def call_mcp_tool(tool_name: str, arguments: dict) -> dict:
     # Simulating MCP call for now to keep it lightweight, or we can use the actual SDK.
     # For this local prototype, we will import and call tools directly as if via MCP.
-    from mcp_server import get_stock_info, analyze_data, analyze_fundamentals
+    from mcp_server import get_stock_info, analyze_data, analyze_fundamentals, get_market_insights, scan_markets
     if tool_name == "get_stock_info":
         return json.loads(get_stock_info(**arguments))
     elif tool_name == "analyze_data":
         return json.loads(analyze_data(**arguments))
     elif tool_name == "analyze_fundamentals":
         return json.loads(analyze_fundamentals(**arguments))
+    elif tool_name == "get_market_insights":
+        return json.loads(get_market_insights())
+    elif tool_name == "scan_markets":
+        return json.loads(scan_markets())
     return {"error": "Tool not found"}
 
 def get_mcp_resource(uri: str) -> str:
@@ -65,6 +67,7 @@ def sentiment_analyzer_node(state: AgentState):
     prompt = f"Analyze the following recent news headlines for the stock {state['symbol']}. Return a pure JSON object with exactly two keys: 'score' (number: 1 for bullish, 0 for neutral, -1 for bearish) and 'reasoning' (short string explanation). News: {news}"
     
     try:
+        llm = get_llm(state.get("llm_provider", "Ollama"))
         response = llm.invoke([HumanMessage(content=prompt)])
         parsed = extract_json(response.content)
         if not parsed:
@@ -112,6 +115,7 @@ def recommendation_node(state: AgentState):
     """
     
     try:
+        llm = get_llm(state.get("llm_provider", "Ollama"))
         response = llm.invoke([HumanMessage(content=prompt)])
         parsed = extract_json(response.content)
         if not parsed:
@@ -154,6 +158,7 @@ def risk_advice_node(state: AgentState):
     Return as JSON: {{"advice": "Concise paragraph", "averaging_strategy": "Plan", "profit_potential": "Estimate"}}
     """
     try:
+        llm = get_llm(state.get("llm_provider", "Ollama"))
         response = llm.invoke([HumanMessage(content=prompt)])
         parsed = extract_json(response.content)
         if not parsed:
@@ -166,3 +171,77 @@ def risk_advice_node(state: AgentState):
         }
     except Exception as e:
         return {"personalized_advice": "Unable to generate personalized advice.", "averaging_strategy": "N/A", "profit_potential": "N/A"}
+def intraday_analyzer_node(state: AgentState):
+    if state.get("error"):
+        return state
+        
+    symbol = state.get("symbol")
+    investment = state.get("investment_amount", 10000.0)
+    min_profit_pct = state.get("min_greedy_profit", 1.0)
+    
+    # 1. Fetch Intraday Data (5m) via MCP
+    # We call get_stock_info with interval="5"
+    data = call_mcp_tool("get_stock_info", {"symbol": symbol, "interval": "5"})
+    if "error" in data:
+        return {"error": data.get("error")}
+        
+    # 2. Analyze via SLM
+    current_price = data.get("current_price", 0)
+    tv_recent = extract_recent_history(data.get("tv_history", "{}"), days=1) # 1 day of 5m bars
+    
+    prompt = f"""
+    You are an Intraday Trading expert for the Indian Market. 
+    Symbol: {symbol}
+    Current Price: ₹{current_price}
+    Investment Amount: ₹{investment}
+    Target Profit: {min_profit_pct}%
+    
+    Recent 5-minute OHLCV Data: {tv_recent}
+    
+    Your task:
+    1. Analyze the momentum and trend from the last few 5-minute bars.
+    2. Calculate the exact quantity to buy based on investment (Investment / Current Price).
+    3. Determine a precise 'buy_entry' price (e.g. current or a slight dip).
+    4. Determine a 'sell_exit' price that guarantees at least {min_profit_pct}% profit after entry.
+    5. Provide a 'stop_loss' recommendation.
+    6. Give a 'short_logic' explanation.
+    
+    Return a pure JSON object:
+    {{
+        "quantity": int,
+        "buy_entry": "₹XXX.XX",
+        "sell_exit": "₹XXX.XX",
+        "stop_loss": "₹XXX.XX",
+        "logic": "The reasoning based on 5m trend",
+        "expected_profit": "₹XXX.XX"
+    }}
+    """
+    
+    try:
+        llm = get_llm(state.get("llm_provider", "Ollama"))
+        response = llm.invoke([HumanMessage(content=prompt)])
+        parsed = extract_json(response.content)
+        if not parsed:
+            parsed = {
+                "quantity": int(investment / current_price) if current_price > 0 else 0,
+                "buy_entry": f"₹{current_price}",
+                "sell_exit": f"₹{current_price * (1 + min_profit_pct/100):.2f}",
+                "stop_loss": f"₹{current_price * 0.99:.2f}",
+                "logic": "Fallback logic: Scalping based on target percentage.",
+                "expected_profit": f"₹{investment * (min_profit_pct/100):.2f}"
+            }
+            
+        # Format for state
+        advice = f"Intraday Strategy: Buy {parsed.get('quantity')} units at {parsed.get('buy_entry')}. Exit at {parsed.get('sell_exit')} with Stop Loss at {parsed.get('stop_loss')}. \nLogic: {parsed.get('logic')}"
+        
+        return {
+            "intraday_data": data,
+            "recommendation": "INTRADAY",
+            "reasoning": parsed.get("logic"),
+            "buy_target": parsed.get("buy_entry"),
+            "sell_target": parsed.get("sell_exit"),
+            "personalized_advice": advice,
+            "profit_potential": parsed.get("expected_profit")
+        }
+    except Exception as e:
+        return {"error": f"Intraday Analysis failed: {str(e)}"}

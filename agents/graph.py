@@ -1,6 +1,6 @@
 from langgraph.graph import StateGraph, START, END
 from agents.state import AgentState
-from agents.nodes import data_fetcher_node, sentiment_analyzer_node, recommendation_node, risk_advice_node
+from agents.nodes import data_fetcher_node, sentiment_analyzer_node, recommendation_node, risk_advice_node, intraday_analyzer_node
 
 def build_graph():
     workflow = StateGraph(AgentState)
@@ -21,5 +21,15 @@ def build_graph():
     workflow.add_edge("sentiment_analyzer", "recommendation")
     workflow.add_edge("recommendation", "risk_advice")
     workflow.add_edge("risk_advice", END)
+    
+    return workflow.compile()
+
+def build_intraday_graph():
+    workflow = StateGraph(AgentState)
+    
+    workflow.add_node("intraday_analyzer", intraday_analyzer_node)
+    
+    workflow.add_edge(START, "intraday_analyzer")
+    workflow.add_edge("intraday_analyzer", END)
     
     return workflow.compile()

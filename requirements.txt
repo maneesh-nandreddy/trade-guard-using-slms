@@ -5,4 +5,6 @@ yfinance
 pandas_ta
 fpdf2
 websocket-client
-requests
+langchain-groq
+python-dotenv
+fastmcp
