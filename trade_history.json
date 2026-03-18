@@ -75,5 +75,26 @@
         "recommendation": "HOLD",
         "reasoning": "The current stock is in a bearish trend with an RSI below the midpoint, indicating overbought conditions. The MACD and its signal line are both negative which suggests that selling pressure may increase soon if not already present.",
         "price": 493.15
+    },
+    {
+        "timestamp": "2026-03-18T11:10:56.180855",
+        "symbol": "HINDCOPPER",
+        "recommendation": "HOLD",
+        "reasoning": "The current stock is trading at a bearish trend with an RSI below the midpoint, indicating overbought conditions. However, considering its historical highs and lows along with recent price recovery towards resistance levels, it suggests that while there may be short-term volatility ahead due to market sentiment (as indicated by negative news score), a long-term bullish trend is likely given the company's strong fundamentals. The MACD shows divergence from RSI and EMA 50 which could indicate an upcoming reversal, but this needs confirmation in subsequent price action.",
+        "price": 479.5
+    },
+    {
+        "timestamp": "2026-03-18T12:44:48.690499",
+        "symbol": "NIBE",
+        "recommendation": "HOLD",
+        "reasoning": "The current price of NIBE is 1011.6, which is below the 50-day EMA (1053.7651386378827) and 200-day EMA (1236.643915737643). The RSI (47.51537384335626) is neutral, and the MACD (-11.026178105231793) is bearish. The trend is bearish, and the news sentiment score is neutral. Given these indicators, it's best to hold the stock for now.",
+        "price": 1011.6
+    },
+    {
+        "timestamp": "2026-03-18T15:03:59.457761",
+        "symbol": "NIBE",
+        "recommendation": "HOLD",
+        "reasoning": "The current price of NIBE is 998.0, which is below the 50-day EMA (1053.23) and 200-day EMA (1236.51), indicating a bearish trend. However, the RSI (45.56) is not in the oversold region, and the MACD (-12.11) is below the signal line (-13.41), suggesting a potential for a bounce. The news sentiment score is neutral (0), which does not provide any strong directional bias. Given the mixed signals, it is recommended to hold the stock and wait for a clearer trend to emerge.",
+        "price": 998.0
     }
 ]
