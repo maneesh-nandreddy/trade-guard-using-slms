@@ -1,0 +1,13 @@
+langchain-ollama
+langgraph
+streamlit
+yfinance
+pandas_ta
+fpdf2
+websocket-client
+langchain-groq
+python-dotenv
+fastmcp
+pydantic
+sqlalchemy
+apscheduler
