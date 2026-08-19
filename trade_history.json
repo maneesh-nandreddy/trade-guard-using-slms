@@ -1,0 +1,100 @@
+[
+    {
+        "timestamp": "2026-03-17T11:44:22.076084",
+        "symbol": "NIBE",
+        "recommendation": "HOLD",
+        "reasoning": "The RSI is below the overbought threshold of 70, indicating that it might be time to take profits or reassess position. The MACD and its signal are both negative which suggests a bearish momentum but this could also mean an opportunity for buying if confirmed by other indicators like trend confirmation from moving averages (EMAs). However, the absence of any significant Bollinger Bands movement indicates that there is no immediate volatility to exploit. The news sentiment score being neutral suggests a lack of external market-moving events which could impact NIBE's price direction significantly.",
+        "price": 1005.0
+    },
+    {
+        "timestamp": "2026-03-17T12:12:56.273102",
+        "symbol": "NIBE",
+        "recommendation": "HOLD",
+        "reasoning": "The current price of NIBE is at the upper end of its recent trading range, and while it's above both TradingView Recent OHLCV (Last 5 Days) closing prices as well as YFinance Recent OHLCV high points from last week. The RSI indicates an overbought condition but not extreme oversold conditions since the value is below 70 and close to a neutral reading of around 68, suggesting some selling pressure might be present in near future if it continues rising without supportive news or technical indicators turning bearish (e.g., MACD crossing under). The bullish sentiment score at zero suggests no strong positive bias from the market perspective which aligns with a neutral condition as per Technical Indicators, and this is further supported by both TradingView's Neutral trend directionality and YFinance\u2019s closing price being near its 5-day high. The MACD has been negative for some time now indicating bearish momentum but not yet signaling a clear sell zone as the 'macd_signal' is also below zero, suggesting that it hasn't confirmed with enough strength to suggest an immediate downtrend reversal or continuation.",
+        "price": 1005.4
+    },
+    {
+        "timestamp": "2026-03-17T13:10:11.662224",
+        "symbol": "ETERNAl.NS",
+        "recommendation": "HOLD",
+        "reasoning": "The current stock is trading at a bearish trend with an RSI below the overbought threshold, indicating potential for further declines. However, considering its recent close near resistance and bounce back from lows in OHLCV data along with neutral sentiment score suggesting no immediate negative news impacts on price direction.",
+        "price": 234.37
+    },
+    {
+        "timestamp": "2026-03-17T13:25:47.382410",
+        "symbol": "CUPID",
+        "recommendation": "HOLD",
+        "reasoning": "The current stock price is at a lower ebb, but the technical indicators and market sentiment are not overly bearish. The RSI of 46 suggests that while there may be some downward momentum (as it's above the neutral mark), it isn't extreme enough to indicate an oversold condition or imminent price drop.",
+        "price": 79.7
+    },
+    {
+        "timestamp": "2026-03-17T14:08:47.775462",
+        "symbol": "RELIANCE.NS",
+        "recommendation": "HOLD",
+        "reasoning": "Failed to parse recommendation from SLM.",
+        "price": 1398.9
+    },
+    {
+        "timestamp": "2026-03-17T14:20:22.985313",
+        "symbol": "CYIENTDLM",
+        "recommendation": "HOLD",
+        "reasoning": "The current stock is in a bearish trend with an RSI below the midpoint, indicating it's oversold. The MACD and its signal line are both negative which suggests that selling pressure may be increasing despite some recent price recovery attempts as seen by closing near yesterday\u2019s high.",
+        "price": 315.9
+    },
+    {
+        "timestamp": "2026-03-17T14:42:43.979215",
+        "symbol": "TEJASNET",
+        "recommendation": "HOLD",
+        "reasoning": "The current stock price is above the moving average, and despite a bearish trend indicated by RSI overbought levels (56.79), there's no immediate downward momentum as suggested by MACD being in 'Neutral'. The news sentiment score of zero indicates neutrality which aligns with this stance.",
+        "price": 442.7
+    },
+    {
+        "timestamp": "2026-03-17T14:54:29.460455",
+        "symbol": "TEJASNET",
+        "recommendation": "HOLD",
+        "reasoning": "The current stock price is $441.0, which sits below the historical highs but above its lower bound in recent times (currently at a bearish trend). The RSI of 56.42 suggests an overbought condition; however, it's not excessively high to trigger immediate concern for a price reversal or correction.",
+        "price": 441.0
+    },
+    {
+        "timestamp": "2026-03-17T15:28:36.320691",
+        "symbol": "RELIANCE.NS",
+        "recommendation": "HOLD",
+        "reasoning": "The stock is currently trading at a bullish trend with an RSI below the overbought threshold, indicating that it may be time to take profits. However, considering its recent price fluctuations and overall market sentiment which seems bearish as per news analysis, holding off on buying more shares for now would be prudent.",
+        "price": 1394.2
+    },
+    {
+        "timestamp": "2026-03-17T15:41:17.812493",
+        "symbol": "NIBE",
+        "recommendation": "HOLD",
+        "reasoning": "The current stock is in a bearish trend with an RSI below the mid-50 mark, indicating it's overbought. The MACD and its signal are negative which suggests selling pressure; however, considering that there has been no significant news sentiment change (neutral score), this might not be enough to trigger immediate action for retail investors who have a long-term perspective.",
+        "price": 998.9
+    },
+    {
+        "timestamp": "2026-03-17T17:01:21.608961",
+        "symbol": "HINDCOPPER",
+        "recommendation": "HOLD",
+        "reasoning": "The current stock is in a bearish trend with an RSI below the midpoint, indicating overbought conditions. The MACD and its signal line are both negative which suggests that selling pressure may increase soon if not already present.",
+        "price": 493.15
+    },
+    {
+        "timestamp": "2026-03-18T11:10:56.180855",
+        "symbol": "HINDCOPPER",
+        "recommendation": "HOLD",
+        "reasoning": "The current stock is trading at a bearish trend with an RSI below the midpoint, indicating overbought conditions. However, considering its historical highs and lows along with recent price recovery towards resistance levels, it suggests that while there may be short-term volatility ahead due to market sentiment (as indicated by negative news score), a long-term bullish trend is likely given the company's strong fundamentals. The MACD shows divergence from RSI and EMA 50 which could indicate an upcoming reversal, but this needs confirmation in subsequent price action.",
+        "price": 479.5
+    },
+    {
+        "timestamp": "2026-03-18T12:44:48.690499",
+        "symbol": "NIBE",
+        "recommendation": "HOLD",
+        "reasoning": "The current price of NIBE is 1011.6, which is below the 50-day EMA (1053.7651386378827) and 200-day EMA (1236.643915737643). The RSI (47.51537384335626) is neutral, and the MACD (-11.026178105231793) is bearish. The trend is bearish, and the news sentiment score is neutral. Given these indicators, it's best to hold the stock for now.",
+        "price": 1011.6
+    },
+    {
+        "timestamp": "2026-03-18T15:03:59.457761",
+        "symbol": "NIBE",
+        "recommendation": "HOLD",
+        "reasoning": "The current price of NIBE is 998.0, which is below the 50-day EMA (1053.23) and 200-day EMA (1236.51), indicating a bearish trend. However, the RSI (45.56) is not in the oversold region, and the MACD (-12.11) is below the signal line (-13.41), suggesting a potential for a bounce. The news sentiment score is neutral (0), which does not provide any strong directional bias. Given the mixed signals, it is recommended to hold the stock and wait for a clearer trend to emerge.",
+        "price": 998.0
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "symbol": "HINDCOPPER",
+        "quantity": 24,
+        "avg_price": 542.0
+    },
+    {
+        "symbol": "SUZLON",
+        "quantity": 150,
+        "avg_price": 44.3
+    },
+    {
+        "symbol": "NIBE",
+        "quantity": 27,
+        "avg_price": 999.0
+    }
+]
